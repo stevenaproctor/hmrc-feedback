@@ -1,0 +1,383 @@
+<main id="content" role="main">
+    
+        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
+
+            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                There is a problem
+            </h1>
+
+            <ul class="error-summary-list text">
+                <li id="done-error-link"><a href="#done-yes">Select yes if you were able to do what you needed to</a></li>
+                <li id="what-error-link"><a href="#what">Enter what you were trying to do and why you were not able to do it</a></li>
+                <li id="before-error-link"><a href="#tel">Select what you did before you used this service</a></li>
+                <li id="sat-error-link"><a href="#vsat">Select how you felt about the service you received today</a></li>
+                <li id="rec-error-link"><a href="#10">Select how likely you are to recommend this online service to a friend or colleague</a></li>
+                <li id="rat-error-link"><a href="#rating">Enter why you gave this rating</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+
+            <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
+
+                <h1 class="heading-large">
+                    Give feedback
+                </h1>
+
+                <p>
+                    Do not include any personal or financial information like your National Insurance number or bank details.
+                </p>
+
+                <form role="form" class="form" action="thanks">            
+
+                    <fieldset class="inline">                    
+
+                        <div class="form-group" id="done-yes-no">
+                        <legend class="form-label-bold">
+                            Were you able to do what you needed to do today?
+                        </legend>
+
+                        <span id="done-error" class="error-message" style="display:none">Select yes if you were able to do what you needed to</span>
+
+                        <label class="block-label" for="done-yes">
+                            <input id="done-yes" type="radio" name="done" value="Yes" aria-required="true">Yes
+                        </label>
+
+                        <label class="block-label" for="done-no" data-target="what-panel">
+                            <input id="done-no" type="radio" name="done" value="No" aria-required="true">No
+                        </label>                        
+
+                        <div class="form-group panel panel-border-narrow js-hidden" id="what-panel">                            
+                            <label class="form-label-bold" for="what" aria-required="true">
+                                What were you trying to do and why were you not able to do it?
+                            </label>
+                            <span id="what-error" class="error-message" style="display:none">Enter what you were trying to do and why you were not able to do it</span>
+                            <textarea class="form-control" id="what" style="width:100%" rows="5"></textarea>                        
+                        </div>  
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>                    
+
+                        <div class="form-group" id="before">
+                        <legend class="form-label-bold">
+                            What did you do before using this service?
+                        </legend>
+
+                            <p role="complementary">
+                                Select all that apply.
+                            </p>
+
+                        <span id="before-error" class="error-message" style="display:none">Select what you did before you used this service</span>
+
+                        <label class="block-label" for="tel" id="tel-label">
+                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()" aria-required="true">Telephoned HMRC
+                        </label>
+
+                        <label class="block-label" for="let" id="let-label">
+                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()" aria-required="true">Wrote to HMRC
+                        </label>
+
+                        <label class="block-label" for="online" id="online-label">
+                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()" aria-required="true">Completed an online form
+                        </label>
+
+                        <label class="block-label" for="govuk" id="govuk-label">
+                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()" aria-required="true">Read guidance on GOV.UK
+                        </label>
+
+                        <label class="block-label" for="pro" id="pro-label">
+                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()" aria-required="true">Spoke to your employer, agent or accountant
+                        </label>
+
+                        <label class="block-label" for="fandf" id="fandf-label">
+                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()" aria-required="true">Spoke to a friend or family member
+                        </label>
+
+                        <label class="block-label" for="none" id="none-label">
+                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()" aria-required="true">None of these
+                        </label>
+                        </div>
+                    </fieldset> 
+
+                    <fieldset>                    
+
+                        <div class="form-group" id="satisfaction">
+                        <legend class="form-label-bold">
+                            Overall, how did you feel about the service you received today?
+                        </legend>                        
+
+
+                        <span id="sat-error" class="error-message" style="display:none">Select how you felt about the service you received today </span>
+
+                        <label class="block-label" for="vsat">
+                            <input id="vsat" type="radio" name="sat" value="Very satisfied" aria-required="true">Very satisfied
+                        </label>
+
+                        <label class="block-label" for="sat">
+                            <input id="sat" type="radio" name="sat" value="Satisifed" aria-required="true">Satisifed
+                        </label>
+
+                        <label class="block-label" for="neither">
+                            <input id="neither" type="radio" name="sat" value="Neither satisified or dissatisfied" aria-required="true">Neither satisifed or dissatisfied
+                        </label>
+
+                        <label class="block-label" for="dis">
+                            <input id="dis" type="radio" name="sat" value="Dissatisfied" aria-required="true">Dissatisfied
+                        </label>
+
+                        <label class="block-label" for="vdis">
+                            <input id="vdis" type="radio" name="sat" value="Very dissatisfied" aria-required="true">Very dissatisfied
+                        </label>                    
+                        </div>
+                    </fieldset>
+
+                    <fieldset>                    
+
+                        <div class="form-group" id="recommended">
+                        <legend class="form-label-bold">
+                            How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
+                        </legend>                                                
+
+                        <span id="rec-error" class="error-message" style="display:none">Select how likely you are to recommend this online service to a friend or colleague</span>
+
+                        <label class="block-label" for="10">
+                            <input id="10" type="radio" name="rec" value="10" aria-required="true">10 Very likely
+                        </label>
+
+                        <label class="block-label" for="09">
+                            <input id="09" type="radio" name="rec" value="09" aria-required="true">9
+                        </label>
+
+                        <label class="block-label" for="08">
+                            <input id="08" type="radio" name="rec" value="08" aria-required="true">8
+                        </label>
+
+                        <label class="block-label" for="07">
+                            <input id="07" type="radio" name="rec" value="07" aria-required="true">7
+                        </label>
+
+                        <label class="block-label" for="06">
+                            <input id="06" type="radio" name="rec" value="06" aria-required="true">6
+                        </label>
+
+                        <label class="block-label" for="05">
+                            <input id="05" type="radio" name="rec" value="05" aria-required="true">5
+                        </label>
+
+                        <label class="block-label" for="04">
+                            <input id="04" type="radio" name="rec" value="04" aria-required="true">4
+                        </label>
+
+                        <label class="block-label" for="03">
+                            <input id="03" type="radio" name="rec" value="03" aria-required="true">3
+                        </label>
+
+                        <label class="block-label" for="02">
+                            <input id="02" type="radio" name="rec" value="02" aria-required="true">2
+                        </label>
+
+                        <label class="block-label" for="01">
+                            <input id="01" type="radio" name="rec" value="01" aria-required="true">1
+                        </label>
+
+                        <label class="block-label" for="00">
+                            <input id="00" type="radio" name="rec" value="00" aria-required="true">0 Very unlikely
+                        </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group" id="rat">                        
+                        <label class="form-label-bold" for="rating">
+                            Why did you give this rating?
+                        </label>
+                        <span id="rat-error" class="error-message" style="display:none">Enter why you gave this rating</span>
+                        <textarea class="form-control" id="rating" style="width:100%" rows="5" aria-required="true"></textarea>              
+                    </div>
+
+                    <div class="form-group" id="improve">
+                        <label class="form-label-bold" for="rating">
+                            How could we improve this service?
+                        </label>
+                        <textarea class="form-control" id="rating" style="width:100%" rows="5"></textarea>                        
+                    </div>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                </div>
+
+          </form>
+
+        </div>
+      </div>
+</main>
+
+<script>
+
+function checkSelected(){
+
+var done = doneYesNo();
+    console.log(done);
+var before = beforeToday();
+    console.log(before);
+var sat = checkSatisfaction();
+    console.log(sat);
+var rec = checkRecommended();
+    console.log(rec);
+var rat = checkRating();
+    console.log(rat);
+    
+if (done == false || before == false || sat == false || rec == false || rat == false){
+    $('#error-summary').show();
+    $('#error-summary').focus();
+    return false;
+}
+else{
+    $('#error-summary').hide();        
+    return true;
+}
+}
+    
+function doneYesNo(){
+
+// Nothing selected
+if(!document.getElementById('done-yes').checked && !document.getElementById('done-no').checked){            
+    $('#done-error-link').show();
+    $('#done-error').show();
+    $('#done-yes-no').addClass('error');
+    $('#what-error-link').hide();
+    $('#what-error').hide();
+    $('#what-panel').removeClass('error');
+    return false;
+}
+else if(document.getElementById('done-no').checked && document.getElementById('what').value == ""){
+    $('#done-error-link').hide();
+    $('#done-error').hide();
+    $('#done-yes-no').removeClass('error');        
+    $('#what-error-link').show();
+    $('#what-error').show();
+    $('#what-panel').addClass('error');
+    return false;
+}
+else{
+    $('#done-error-link').hide();
+    $('#done-error').hide();
+    $('#done-yes-no').removeClass('error');        
+    $('#what-error-link').hide();
+    $('#what-error').hide();
+    $('#what-panel').removeClass('error');
+    return true;
+}
+}
+    
+function beforeToday(){
+    
+if(!document.getElementById('tel').checked && !document.getElementById('let').checked && !document.getElementById('online').checked && !document.getElementById('govuk').checked && !document.getElementById('pro').checked && !document.getElementById('fandf').checked && !document.getElementById('none').checked){    
+    $('#before-error-link').show();
+    $('#before-error').show();
+    $('#before').addClass('error');
+    return false;
+}
+else{
+    $('#before-error-link').hide();
+    $('#before-error').hide();
+    $('#before').removeClass('error');
+    return true;
+}
+
+}
+
+function checkSatisfaction(){
+    
+if(!document.getElementById('vsat').checked && !document.getElementById('sat').checked && !document.getElementById('neither').checked && !document.getElementById('dis').checked && !document.getElementById('vdis').checked){    
+    $('#sat-error-link').show();
+    $('#sat-error').show();
+    $('#satisfaction').addClass('error');
+    return false;
+}
+else{
+    $('#sat-error-link').hide();
+    $('#sat-error').hide();
+    $('#satisfaction').removeClass('error');
+    return true;
+}
+
+}
+
+function checkRecommended(){
+    
+if(!document.getElementById('10').checked && !document.getElementById('09').checked && !document.getElementById('08').checked && !document.getElementById('07').checked && !document.getElementById('06').checked && !document.getElementById('05').checked && !document.getElementById('04').checked && !document.getElementById('03').checked && !document.getElementById('02').checked && !document.getElementById('01').checked && !document.getElementById('00').checked){    
+    $('#rec-error-link').show();
+    $('#rec-error').show();
+    $('#recommended').addClass('error');
+    return false;
+}
+else{
+    $('#rec-error-link').hide();
+    $('#rec-error').hide();
+    $('#recommended').removeClass('error');
+    return true;
+}
+
+}
+
+function checkRating(){
+    
+if(document.getElementById('rating').value == ""){
+    $('#rat-error-link').show();
+    $('#rat-error').show();
+    $('#rat').addClass('error');
+    return false;
+}
+else{
+    $('#rat-error-link').hide();
+    $('#rat-error').hide();
+    $('#rat').removeClass('error');            
+    return true;
+}
+}
+    
+function checkNone(){
+    
+if ($('#none').attr('checked', true)){
+    $('#none').attr('checked', false);
+    $('#none-label').removeClass('selected');
+}
+else{
+}
+}
+
+function checkChecks(){
+    
+if ($('#tel').attr('checked', true)){
+    $('#tel').attr('checked', false);
+    $('#tel-label').removeClass('selected');
+}
+if ($('#let').attr('checked', true)){
+    $('#let').attr('checked', false);
+    $('#let-label').removeClass('selected');
+}
+if ($('#online').attr('checked', true)){
+    $('#online').attr('checked', false);
+    $('#online-label').removeClass('selected');
+}
+if ($('#govuk').attr('checked', true)){
+    $('#govuk').attr('checked', false);
+    $('#govuk-label').removeClass('selected');
+}
+if ($('#pro').attr('checked', true)){
+    $('#pro').attr('checked', false);
+    $('#pro-label').removeClass('selected');
+}
+if ($('#fandf').attr('checked', true)){
+    $('#fandf').attr('checked', false);
+    $('#fandf-label').removeClass('selected');
+}
+}
+
+</script>
