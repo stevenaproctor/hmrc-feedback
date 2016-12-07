@@ -1,0 +1,165 @@
+-
+<script>
+    
+function checkSelected(){
+
+var done = doneYesNo();
+    console.log(done);
+var before = beforeToday();
+    console.log(before);
+var sat = checkSatisfaction();
+    console.log(sat);
+var rec = checkRecommended();
+    console.log(rec);
+var rat = checkRating();
+    console.log(rat);
+    
+if (done == false || before == false || sat == false || rec == false || rat == false){
+    $('#error-summary').show();
+    $('#error-summary').focus();
+    return false;
+}
+else{
+    $('#error-summary').hide();        
+    return true;
+}
+}
+    
+function doneYesNo(){
+
+// Nothing selected
+if(!document.getElementById('done-yes').checked && !document.getElementById('done-no').checked){            
+    $('#done-error-link').show();
+    $('#done-error').show();
+    $('#done-yes-no').addClass('error');
+    $('#what-error-link').hide();
+    $('#what-error').hide();
+    $('#what-panel').removeClass('error');
+    return false;
+}
+else if(document.getElementById('done-no').checked && document.getElementById('what').value == ""){
+    $('#done-error-link').hide();
+    $('#done-error').hide();
+    $('#done-yes-no').removeClass('error');        
+    $('#what-error-link').show();
+    $('#what-error').show();
+    $('#what-panel').addClass('error');
+    return false;
+}
+else{
+    $('#done-error-link').hide();
+    $('#done-error').hide();
+    $('#done-yes-no').removeClass('error');        
+    $('#what-error-link').hide();
+    $('#what-error').hide();
+    $('#what-panel').removeClass('error');
+    return true;
+}
+}
+    
+function beforeToday(){
+    
+if(!document.getElementById('tel').checked && !document.getElementById('let').checked && !document.getElementById('online').checked && !document.getElementById('govuk').checked && !document.getElementById('pro').checked && !document.getElementById('fandf').checked && !document.getElementById('none').checked){    
+    $('#before-error-link').show();
+    $('#before-error').show();
+    $('#before').addClass('error');
+    return false;
+}
+else{
+    $('#before-error-link').hide();
+    $('#before-error').hide();
+    $('#before').removeClass('error');
+    return true;
+}
+
+}
+
+function checkSatisfaction(){
+    
+if(!document.getElementById('vsat').checked && !document.getElementById('sat').checked && !document.getElementById('neither').checked && !document.getElementById('dis').checked && !document.getElementById('vdis').checked){    
+    $('#sat-error-link').show();
+    $('#sat-error').show();
+    $('#satisfaction').addClass('error');
+    return false;
+}
+else{
+    $('#sat-error-link').hide();
+    $('#sat-error').hide();
+    $('#satisfaction').removeClass('error');
+    return true;
+}
+
+}
+
+function checkRecommended(){
+    
+if(!document.getElementById('10').checked && !document.getElementById('09').checked && !document.getElementById('08').checked && !document.getElementById('07').checked && !document.getElementById('06').checked && !document.getElementById('05').checked && !document.getElementById('04').checked && !document.getElementById('03').checked && !document.getElementById('02').checked && !document.getElementById('01').checked && !document.getElementById('00').checked){    
+    $('#rec-error-link').show();
+    $('#rec-error').show();
+    $('#recommended').addClass('error');
+    return false;
+}
+else{
+    $('#rec-error-link').hide();
+    $('#rec-error').hide();
+    $('#recommended').removeClass('error');
+    return true;
+}
+
+}
+
+function checkRating(){
+    
+if(document.getElementById('rating').value == ""){
+    $('#rat-error-link').show();
+    $('#rat-error').show();
+    $('#rat').addClass('error');
+    return false;
+}
+else{
+    $('#rat-error-link').hide();
+    $('#rat-error').hide();
+    $('#rat').removeClass('error');            
+    return true;
+}
+}
+    
+function checkNone(){
+    
+if ($('#none').attr('checked', true)){
+    $('#none').attr('checked', false);
+    $('#none-label').removeClass('selected');
+}
+else{
+}
+}
+
+function checkChecks(){
+    
+if ($('#tel').attr('checked', true)){
+    $('#tel').attr('checked', false);
+    $('#tel-label').removeClass('selected');
+}
+if ($('#let').attr('checked', true)){
+    $('#let').attr('checked', false);
+    $('#let-label').removeClass('selected');
+}
+if ($('#online').attr('checked', true)){
+    $('#online').attr('checked', false);
+    $('#online-label').removeClass('selected');
+}
+if ($('#govuk').attr('checked', true)){
+    $('#govuk').attr('checked', false);
+    $('#govuk-label').removeClass('selected');
+}
+if ($('#pro').attr('checked', true)){
+    $('#pro').attr('checked', false);
+    $('#pro-label').removeClass('selected');
+}
+if ($('#fandf').attr('checked', true)){
+    $('#fandf').attr('checked', false);
+    $('#fandf-label').removeClass('selected');
+}
+}
+
+</script>
