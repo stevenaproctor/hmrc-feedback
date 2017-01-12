@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Exit survey
+  How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
 {% endblock %}
 
 {% block content %}
@@ -31,19 +31,22 @@
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
                 <h1 class="heading-large">
-                    Give feedback
+                    <span class="heading-secondary">Give feedback</span>
+                    How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
                 </h1>
 
+<!--
                 <p>
                     Do not include any personal or financial information like your National Insurance number or bank details.
                 </p>
+-->
 
-                <form role="form" class="form" action="exit5">                               
+                <form role="form" class="form" action="feedback6">                               
 
                     <fieldset>                    
 
                         <div class="form-group" id="recommended">
-                        <legend class="form-label-bold">
+                        <legend class="visuallyhidden">
                             How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
                         </legend>                                                
 
@@ -98,8 +101,11 @@
                     <div class="form-group" id="rat">                        
                         <label class="form-label-bold" for="rating">
                             Why did you give this rating?
-                        </label>
+                        </label>                        
                         <span id="rat-error" class="error-message" style="display:none">Enter why you gave this rating</span>
+                        <p>
+                            Do not include any personal or financial information like your National Insurance number or bank details.
+                        </p>
                         <textarea class="form-control" id="rating" style="width:100%" rows="5" aria-required="true"></textarea>              
                     </div>                    
 

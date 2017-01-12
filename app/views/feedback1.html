@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Exit survey
+  What did you do before using this service?
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,7 @@
             </h1>
 
             <ul class="error-summary-list text">
-                <li id="done-error-link"><a href="#done-yes">Select yes if you were able to do what you needed to</a></li>
-                <li id="what-error-link"><a href="#what">Enter what you were trying to do and why you were not able to do it</a></li>
+                <li id="done-error-link"><a href="#done-yes">Select yes if you were able to do what you needed to</a></li>                
             </ul>
 
         </div>
@@ -29,40 +28,35 @@
 
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
-                <h1 class="heading-large">
-                    Give feedback
+                <h1 class="heading-large">                    
+                    <span class="heading-secondary">Give feedback</span>
+                    Were you able to do what you needed to do today?
                 </h1>
 
+<!--
                 <p>
                     Do not include any personal or financial information like your National Insurance number or bank details.
                 </p>
+-->
 
-                <form role="form" class="form" action="exit2">            
+                <form role="form" class="form" action="feedback2" method="get">            
 
                     <fieldset class="inline">                    
 
                         <div class="form-group" id="done-yes-no">
-                        <legend class="form-label-bold">
+                        <legend class="visuallyhidden">
                             Were you able to do what you needed to do today?
                         </legend>
 
                         <span id="done-error" class="error-message" style="display:none">Select yes if you were able to do what you needed to</span>
-
                         <label class="block-label" for="done-yes">
                             <input id="done-yes" type="radio" name="done" value="Yes" aria-required="true">Yes
                         </label>
 
-                        <label class="block-label" for="done-no" data-target="what-panel">
+                        <label class="block-label" for="done-no">
                             <input id="done-no" type="radio" name="done" value="No" aria-required="true">No
                         </label>                        
-
-                        <div class="form-group panel panel-border-narrow js-hidden" id="what-panel">                            
-                            <label class="form-label-bold" for="what" aria-required="true">
-                                What were you trying to do and why were you not able to do it?
-                            </label>
-                            <span id="what-error" class="error-message" style="display:none">Enter what you were trying to do and why you were not able to do it</span>
-                            <textarea class="form-control" id="what" style="width:100%" rows="5"></textarea>                        
-                        </div>  
+                        
                         </div>
 
                     </fieldset>                    
@@ -83,8 +77,7 @@
 
 function checkSelected(){
 
-var done = doneYesNo();
-    console.log(done);
+var done = doneYesNo();    
     
 if (done == false){
     $('#error-summary').show();
@@ -104,27 +97,12 @@ if(!document.getElementById('done-yes').checked && !document.getElementById('don
     $('#done-error-link').show();
     $('#done-error').show();
     $('#done-yes-no').addClass('error');
-    $('#what-error-link').hide();
-    $('#what-error').hide();
-    $('#what-panel').removeClass('error');
-    return false;
-}
-else if(document.getElementById('done-no').checked && document.getElementById('what').value == ""){
-    $('#done-error-link').hide();
-    $('#done-error').hide();
-    $('#done-yes-no').removeClass('error');        
-    $('#what-error-link').show();
-    $('#what-error').show();
-    $('#what-panel').addClass('error');
     return false;
 }
 else{
     $('#done-error-link').hide();
     $('#done-error').hide();
-    $('#done-yes-no').removeClass('error');        
-    $('#what-error-link').hide();
-    $('#what-error').hide();
-    $('#what-panel').removeClass('error');
+    $('#done-yes-no').removeClass('error');            
     return true;
 }
 }

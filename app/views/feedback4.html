@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Exit survey
+  Overall, how did you feel about the service you received today?
 {% endblock %}
 
 {% block content %}
@@ -29,19 +29,22 @@
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
                 <h1 class="heading-large">
-                    Give feedback
+                    <span class="heading-secondary">Give feedback</span>
+                    Overall, how did you feel about the service you received today?
                 </h1>
 
+<!--
                 <p>
                     Do not include any personal or financial information like your National Insurance number or bank details.
                 </p>
+-->
 
-                <form role="form" class="form" action="exit4">            
+                <form role="form" class="form" action="feedback5">            
 
                     <fieldset>                    
 
                         <div class="form-group" id="satisfaction">
-                        <legend class="form-label-bold">
+                        <legend class="visuallyhidden">
                             Overall, how did you feel about the service you received today?
                         </legend>                        
 

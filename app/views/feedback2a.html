@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What were you trying to do and what stopped you from doing it?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    {% include "includes/phase_banner_alpha.html" %}
+
+        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
+
+            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                There is a problem
+            </h1>
+
+            <ul class="error-summary-list text">
+                <li id="what-error-link"><a href="#what">Enter what you were trying to do and what stopped you from being able to do it</a></li>
+            </ul>
+
+        </div>
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+
+            <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
+
+                <h1 class="heading-large">                    
+                    <span class="heading-secondary">Give feedback</span>
+                    What were you trying to do and what stopped you from being able to do it?
+                </h1>
+
+                <p>
+                    Do not include any personal or financial information like your National Insurance number or bank details.
+                </p>
+
+                <form role="form" class="form" action="feedback3">            
+
+                    <fieldset class="inline">                    
+
+                        <div class="form-group" id="whatwhat">
+                            <label class="visuallyhidden" for="what">
+                                What were you trying to do and what stopped you from doing it?
+                            </label>
+                            <span id="what-error" class="error-message" style="display:none">Enter what you were trying to do and what stopped you from being able to do it</span>
+                            <textarea class="form-control" id="what" style="width:100%" rows="5"></textarea>                        
+                        </div>                        
+
+                    </fieldset>                    
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                </div>
+
+          </form>
+
+        </div>
+      </div>
+</main>
+
+
+
+<script>
+
+function checkSelected(){
+
+var what = checkWhat();    
+    
+if (what == false){
+    $('#error-summary').show();
+    $('#error-summary').focus();
+    return false;
+}
+else{
+    $('#error-summary').hide();        
+    return true;
+}
+}
+    
+function checkWhat(){
+
+// Nothing selected
+if(document.getElementById('what').value == ""){
+    $('#what-error-link').show();
+    $('#what-error').show();
+    $('#whatwhat').addClass('error');
+    return false;
+}
+else{
+    $('#done-error-link').hide();
+    $('#done-error').hide();
+    $('#done-yes-no').removeClass('error');        
+    return true;
+}
+}
+    
+
+</script>
+
+{% endblock %}

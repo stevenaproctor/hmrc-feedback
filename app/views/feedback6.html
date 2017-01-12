@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Exit survey
+  How could we improve this service?
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,8 @@
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
                 <h1 class="heading-large">
-                    Give feedback
+                    <span class="heading-secondary">Give feedback</span>
+                    How could we improve this service?
                 </h1>
 
                 <p>
@@ -27,7 +28,7 @@
                 <form role="form" class="form" action="thanks">                                
 
                     <div class="form-group" id="improve">
-                        <label class="form-label-bold" for="rating">
+                        <label class="visuallyhidden" for="rating">
                             How could we improve this service?
                         </label>
                         <textarea class="form-control" id="rating" style="width:100%" rows="5"></textarea>                        

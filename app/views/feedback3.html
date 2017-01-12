@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Exit survey
+  What did you do before using this service?
 {% endblock %}
 
 {% block content %}
@@ -29,20 +29,23 @@
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
                 <h1 class="heading-large">
-                    Give feedback
+                    <span class="heading-secondary">Give feedback</span>
+                    What did you do before using this service?
                 </h1>
 
+<!--
                 <p>
                     Do not include any personal or financial information like your National Insurance number or bank details.
                 </p>
+-->
 
-                <form role="form" class="form" action="exit3">                    
+                <form role="form" class="form" action="feedback4">                    
 
                     <fieldset>                    
 
                         <div class="form-group" id="before">
-                        <legend class="form-label-bold">
-                            What did you do before using this service?
+                        <legend class="visuallyhidden">                            
+                            What did you do before using this service?                            
                         </legend>
 
                             <p role="complementary">
