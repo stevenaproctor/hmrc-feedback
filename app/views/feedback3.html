@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  What did you do before using this service?
+  Overall, how did you feel about the service you received today?
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
             </h1>
 
             <ul class="error-summary-list text">                
-                <li id="before-error-link"><a href="#tel">Select what you did before you used this service</a></li>
+                <li id="sat-error-link"><a href="#vsat">Select how you felt about the service you received today</a></li>                
             </ul>
 
         </div>
@@ -30,7 +30,7 @@
 
                 <h1 class="heading-large">
                     <span class="heading-secondary">Give feedback</span>
-                    What did you do before using this service?
+                    Overall, how did you feel about the service you received today?
                 </h1>
 
 <!--
@@ -39,50 +39,39 @@
                 </p>
 -->
 
-                <form role="form" class="form" action="feedback4">                    
+                <form role="form" class="form" action="feedback4">            
 
                     <fieldset>                    
 
-                        <div class="form-group" id="before">
-                        <legend class="visuallyhidden">                            
-                            What did you do before using this service?                            
-                        </legend>
+                        <div class="form-group" id="satisfaction">
+                        <legend class="visuallyhidden">
+                            Overall, how did you feel about the service you received today?
+                        </legend>                        
 
-                            <p role="complementary">
-                                Select all that apply.
-                            </p>
 
-                        <span id="before-error" class="error-message" style="display:none">Select what you did before you used this service</span>
+                        <span id="sat-error" class="error-message" style="display:none">Select how you felt about the service you received today </span>
 
-                        <label class="block-label" for="tel" id="tel-label">
-                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()" aria-required="true">Telephoned HMRC
+                        <label class="block-label" for="vsat">
+                            <input id="vsat" type="radio" name="sat" value="Very satisfied" aria-required="true">Very satisfied
                         </label>
 
-                        <label class="block-label" for="let" id="let-label">
-                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()" aria-required="true">Wrote to HMRC
+                        <label class="block-label" for="sat">
+                            <input id="sat" type="radio" name="sat" value="Satisifed" aria-required="true">Satisifed
                         </label>
 
-                        <label class="block-label" for="online" id="online-label">
-                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()" aria-required="true">Completed an online form
+                        <label class="block-label" for="neither">
+                            <input id="neither" type="radio" name="sat" value="Neither satisified or dissatisfied" aria-required="true">Neither satisifed or dissatisfied
                         </label>
 
-                        <label class="block-label" for="govuk" id="govuk-label">
-                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()" aria-required="true">Read guidance on GOV.UK
+                        <label class="block-label" for="dis">
+                            <input id="dis" type="radio" name="sat" value="Dissatisfied" aria-required="true">Dissatisfied
                         </label>
 
-                        <label class="block-label" for="pro" id="pro-label">
-                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()" aria-required="true">Spoke to your employer, agent or accountant
-                        </label>
-
-                        <label class="block-label" for="fandf" id="fandf-label">
-                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()" aria-required="true">Spoke to a friend or family member
-                        </label>
-
-                        <label class="block-label" for="none" id="none-label">
-                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()" aria-required="true">None of these
-                        </label>
+                        <label class="block-label" for="vdis">
+                            <input id="vdis" type="radio" name="sat" value="Very dissatisfied" aria-required="true">Very dissatisfied
+                        </label>                    
                         </div>
-                    </fieldset>                   
+                    </fieldset>
 
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
@@ -94,16 +83,14 @@
       </div>
 </main>
 
-
-
 <script>
 
 function checkSelected(){
 
-var before = beforeToday();
-    console.log(before);
+var sat = checkSatisfaction();
+    console.log(sat);
     
-if (before == false){
+if (sat == false){
     $('#error-summary').show();
     $('#error-summary').focus();
     return false;
@@ -114,62 +101,23 @@ else{
 }
 }
     
-function beforeToday(){
+function checkSatisfaction(){
     
-if(!document.getElementById('tel').checked && !document.getElementById('let').checked && !document.getElementById('online').checked && !document.getElementById('govuk').checked && !document.getElementById('pro').checked && !document.getElementById('fandf').checked && !document.getElementById('none').checked){    
-    $('#before-error-link').show();
-    $('#before-error').show();
-    $('#before').addClass('error');
+if(!document.getElementById('vsat').checked && !document.getElementById('sat').checked && !document.getElementById('neither').checked && !document.getElementById('dis').checked && !document.getElementById('vdis').checked){    
+    $('#sat-error-link').show();
+    $('#sat-error').show();
+    $('#satisfaction').addClass('error');
     return false;
 }
 else{
-    $('#before-error-link').hide();
-    $('#before-error').hide();
-    $('#before').removeClass('error');
+    $('#sat-error-link').hide();
+    $('#sat-error').hide();
+    $('#satisfaction').removeClass('error');
     return true;
 }
-
-}
-
-function checkNone(){
     
-if ($('#none').attr('checked', true)){
-    $('#none').attr('checked', false);
-    $('#none-label').removeClass('selected');
-}
-else{
-}
 }
 
-function checkChecks(){
-    
-if ($('#tel').attr('checked', true)){
-    $('#tel').attr('checked', false);
-    $('#tel-label').removeClass('selected');
-}
-if ($('#let').attr('checked', true)){
-    $('#let').attr('checked', false);
-    $('#let-label').removeClass('selected');
-}
-if ($('#online').attr('checked', true)){
-    $('#online').attr('checked', false);
-    $('#online-label').removeClass('selected');
-}
-if ($('#govuk').attr('checked', true)){
-    $('#govuk').attr('checked', false);
-    $('#govuk-label').removeClass('selected');
-}
-if ($('#pro').attr('checked', true)){
-    $('#pro').attr('checked', false);
-    $('#pro-label').removeClass('selected');
-}
-if ($('#fandf').attr('checked', true)){
-    $('#fandf').attr('checked', false);
-    $('#fandf-label').removeClass('selected');
-}
-}
-
-    
 </script>
 
 {% endblock %}
