@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
+  How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,8 @@
             </h1>
 
             <ul class="error-summary-list text">                
-                <li id="rec-error-link"><a href="#10">Select how likely you are to recommend this online service to a friend or colleague</a></li>
-                <li id="rat-error-link"><a href="#rating">Enter why you gave this rating</a></li>
+                <li id="rec-error-link"><a href="#10">Select how likely you are to recommend this service to a friend or colleague</a></li>
+                <!-- <li id="rat-error-link"><a href="#rating">Enter why you gave this rating</a></li> -->
 
             </ul>
 
@@ -32,7 +32,7 @@
 
                 <h1 class="heading-large">
                     <span class="heading-secondary">Give feedback</span>
-                    How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
+                    How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?
                 </h1>
 
 <!--
@@ -47,10 +47,10 @@
 
                         <div class="form-group" id="recommended">
                         <legend class="visuallyhidden">
-                            How likely are you to recommend this online service to a friend or colleague if they needed to do the same thing?
+                            How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?
                         </legend>                                                
 
-                        <span id="rec-error" class="error-message" style="display:none">Select how likely you are to recommend this online service to a friend or colleague</span>
+                        <span id="rec-error" class="error-message" style="display:none">Select how likely you are to recommend this service to a friend or colleague</span>
 
                         <label class="block-label" for="10">
                             <input id="10" type="radio" name="rec" value="10" aria-required="true">10 Very likely
@@ -100,13 +100,13 @@
 
                     <div class="form-group" id="rat">                        
                         <label class="heading-large" for="rating">
-                            Why did you give this rating?
+                            Why did you give this rating? (optional)
                         </label>                        
                         <span id="rat-error" class="error-message" style="display:none">Enter why you gave this rating</span>
                         <p>
                             Do not include any personal or financial information like your National Insurance number or bank details.
                         </p>
-                        <textarea class="form-control" id="rating" style="width:100%" rows="5" aria-required="true"></textarea>              
+                        <textarea class="form-control" id="rating" style="width:100%" rows="5"></textarea>              
                     </div>                    
 
                 <div class="form-group">
@@ -126,11 +126,10 @@
 function checkSelected(){
 
 var rec = checkRecommended();
-    console.log(rec);
-var rat = checkRating();
-    console.log(rat);
+// var rat = checkRating();
     
-if (rec == false || rat == false){
+if (rec == false){
+// if (rec == false || rat == false){
     $('#error-summary').show();
     $('#error-summary').focus();
     return false;
