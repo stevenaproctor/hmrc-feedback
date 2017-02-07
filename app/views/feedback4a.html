@@ -10,20 +10,6 @@
     
     {% include "includes/phase_banner_alpha.html" %}
 
-        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
-
-            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                There is a problem
-            </h1>
-
-            <ul class="error-summary-list text">                
-                <li id="rec-error-link"><a href="#10">Select how likely you are to recommend this service to a friend or colleague</a></li>
-                <!-- <li id="rat-error-link"><a href="#rating">Enter why you gave this rating</a></li> -->
-
-            </ul>
-
-        </div>
-
         <div class="grid-row">
 
             <div class="column-two-thirds">
@@ -35,13 +21,7 @@
                     How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?
                 </h1>
 
-<!--
-                <p>
-                    Do not include any personal or financial information like your National Insurance number or bank details.
-                </p>
--->
-
-                <form role="form" class="form" action="feedback5a">                               
+                <form role="form" class="form" action="thanks2">                               
 
                     <fieldset>                    
 
@@ -53,54 +33,54 @@
                         <span id="rec-error" class="error-message" style="display:none">Select how likely you are to recommend this service to a friend or colleague</span>
 
                         <label class="block-label" for="10">
-                            <input id="10" type="radio" name="rec" value="10" aria-required="true">10 Very likely
+                            <input id="10" type="radio" name="rec" value="10">10 Very likely
                         </label>
 
                         <label class="block-label" for="09">
-                            <input id="09" type="radio" name="rec" value="09" aria-required="true">9
+                            <input id="09" type="radio" name="rec" value="09">9
                         </label>
 
                         <label class="block-label" for="08">
-                            <input id="08" type="radio" name="rec" value="08" aria-required="true">8
+                            <input id="08" type="radio" name="rec" value="08">8
                         </label>
 
                         <label class="block-label" for="07">
-                            <input id="07" type="radio" name="rec" value="07" aria-required="true">7
+                            <input id="07" type="radio" name="rec" value="07">7
                         </label>
 
                         <label class="block-label" for="06">
-                            <input id="06" type="radio" name="rec" value="06" aria-required="true">6
+                            <input id="06" type="radio" name="rec" value="06">6
                         </label>
 
                         <label class="block-label" for="05">
-                            <input id="05" type="radio" name="rec" value="05" aria-required="true">5
+                            <input id="05" type="radio" name="rec" value="05">5
                         </label>
 
                         <label class="block-label" for="04">
-                            <input id="04" type="radio" name="rec" value="04" aria-required="true">4
+                            <input id="04" type="radio" name="rec" value="04">4
                         </label>
 
                         <label class="block-label" for="03">
-                            <input id="03" type="radio" name="rec" value="03" aria-required="true">3
+                            <input id="03" type="radio" name="rec" value="03">3
                         </label>
 
                         <label class="block-label" for="02">
-                            <input id="02" type="radio" name="rec" value="02" aria-required="true">2
+                            <input id="02" type="radio" name="rec" value="02">2
                         </label>
 
                         <label class="block-label" for="01">
-                            <input id="01" type="radio" name="rec" value="01" aria-required="true">1
+                            <input id="01" type="radio" name="rec" value="01">1
                         </label>
 
                         <label class="block-label" for="00">
-                            <input id="00" type="radio" name="rec" value="00" aria-required="true">0 Very unlikely
+                            <input id="00" type="radio" name="rec" value="00">0 Very unlikely
                         </label>
                         </div>
                     </fieldset>
 
                     <div class="form-group" id="rat">                        
                         <label class="heading-large" for="rating">
-                            Why did you give this rating? (optional)
+                            Why did you give this rating?
                         </label>                        
                         <span id="rat-error" class="error-message" style="display:none">Enter why you gave this rating</span>
                         <p>
@@ -110,7 +90,7 @@
                     </div>                    
 
                 <div class="form-group">
-                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                    <input class="button" type="submit" value="Continue" id="submit">
                 </div>
 
           </form>
@@ -118,61 +98,5 @@
         </div>
       </div>
 </main>
-
-
-
-<script>
-
-function checkSelected(){
-
-var rec = checkRecommended();
-// var rat = checkRating();
-    
-if (rec == false){
-// if (rec == false || rat == false){
-    $('#error-summary').show();
-    $('#error-summary').focus();
-    return false;
-}
-else{
-    $('#error-summary').hide();        
-    return true;
-}
-}    
-
-function checkRecommended(){
-    
-if(!document.getElementById('10').checked && !document.getElementById('09').checked && !document.getElementById('08').checked && !document.getElementById('07').checked && !document.getElementById('06').checked && !document.getElementById('05').checked && !document.getElementById('04').checked && !document.getElementById('03').checked && !document.getElementById('02').checked && !document.getElementById('01').checked && !document.getElementById('00').checked){    
-    $('#rec-error-link').show();
-    $('#rec-error').show();
-    $('#recommended').addClass('error');
-    return false;
-}
-else{
-    $('#rec-error-link').hide();
-    $('#rec-error').hide();
-    $('#recommended').removeClass('error');
-    return true;
-}
-
-}
-
-// function checkRating(){
-    
-// if(document.getElementById('rating').value == ""){
-//     $('#rat-error-link').show();
-//     $('#rat-error').show();
-//     $('#rat').addClass('error');
-//     return false;
-// }
-// else{
-//     $('#rat-error-link').hide();
-//     $('#rat-error').hide();
-//     $('#rat').removeClass('error');            
-//     return true;
-// }
-// }
-    
-</script>
 
 {% endblock %}

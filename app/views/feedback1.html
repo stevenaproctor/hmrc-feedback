@@ -10,19 +10,6 @@
     
     {% include "includes/phase_banner_alpha.html" %}
 
-        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
-
-            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                There is a problem
-            </h1>
-
-            <ul class="error-summary-list text">
-                <li id="what-error-link"><a href="#what">Enter why you used the service today</a></li>
-                <li id="done-error-link"><a href="#done-yes">Select yes if you were able to do what you needed to</a></li>                
-            </ul>
-
-        </div>
-
         <div class="grid-row">
 
             <div class="column-two-thirds">
@@ -30,46 +17,87 @@
             <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
 
                 <h1 class="heading-large">                    
-                    <span class="heading-secondary">Give feedback</span>
-                    Why did you use this service today?
+                    Give feedback
                 </h1>
 
                 <p>
-                    Do not include any personal or financial information like your National Insurance number or bank details.
+                    All questions in the survey are optional.
                 </p>
 
-                <form role="form" class="form" action="feedback2">            
-
-                        <div class="form-group" id="whatwhat">
-                            <label class="visuallyhidden" for="what">
-                                What were you trying to do today?
-                            </label>
-                            <span id="what-error" class="error-message" style="display:none">Enter what you were trying to do</span>
-                            <textarea class="form-control" id="what" style="width:100%" rows="5"></textarea>                        
-                        </div>                        
+                <form role="form" class="form" action="feedback2">                                  
 
                 <fieldset class="inline">
                     <div class="form-group" id="done-yes-no">
 
-                        <legend class="heading-large">
-                            Were you able to do what you needed to do?
+                        <legend class="heading-medium">
+                            Were you able to do what you needed to do today?
                         </legend>                
 
-                        <span id="done-error" class="error-message" style="display:none">Select yes if you were able to do what you needed to</span>
                         <label class="block-label" for="done-yes">
-                            <input id="done-yes" type="radio" name="done" value="Yes" aria-required="true">Yes
+                            <input id="done-yes" type="radio" name="done" value="Yes">Yes
                         </label>
 
                         <label class="block-label" for="done-no">
-                            <input id="done-no" type="radio" name="done" value="No" aria-required="true">No
+                            <input id="done-no" type="radio" name="done" value="No">No
                         </label>                        
                         
+                    </div>
+
+                </fieldset>
+
+                <fieldset>                    
+
+                    <div class="form-group" id="before">
+                        <legend class="heading-medium">                            
+                            Why did you come to this service?
+                        </legend>
+
+                        <p role="complementary">
+                            Select all that apply.
+                        </p>
+
+                        <label class="block-label" for="who" id="who-label">
+                            <input id="who" type="checkbox" name="who" value="View who is on your claim">View who is on your claim
+                        </label>
+
+                        <label class="block-label" for="payments" id="payments-label">
+                            <input id="payments" type="checkbox" name="payments" value="View your next payments">View your next payments
+                        </label>
+
+                        <label class="block-label" for="personal" id="personal-label">
+                            <input id="personal" type="checkbox" name="personal" value="Change personal details">Change personal details
+                        </label>
+
+                        <label class="block-label" for="jobs" id="jobs-label">
+                            <input id="jobs" type="checkbox" name="jobs" value="Change jobs">Change jobs
+                        </label>
+
+                        <label class="block-label" for="earnings" id="earnings-label">
+                            <input id="earnings" type="checkbox" name="earnings" value="Change earnings">Change earnings
+                        </label>
+
+                        <label class="block-label" for="children" id="children-label">
+                            <input id="children" type="checkbox" name="children" value="Change children">Change children
+                        </label>
+
+                        <label class="block-label" for="childcare" id="childcare-label">
+                            <input id="childcare" type="checkbox" name="childcare" value="Change childcare">Change childcare
+                        </label>
+
+                        <label class="block-label" for="other" id="other-label" data-target="what-other">
+                            <input id="other" type="checkbox" name="other" value="Other">Other
+                        </label>
+                        <div class="panel panel-border-narrow js-hidden" id="what-other">
+                            <label class="form-label" for="otherother">Tell us what else you came to the service to do</label>
+                            <input class="form-control" name="otherother" type="text" id="contact-email">
                         </div>
 
-                    </fieldset>                    
+                    </div>
+                
+                </fieldset>                    
 
                 <div class="form-group">
-                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                    <input class="button" type="submit" value="Continue" id="submit">
                 </div>
 
           </form>
@@ -77,61 +105,5 @@
         </div>
       </div>
 </main>
-
-
-
-<script>
-
-function checkSelected(){
-
-var done = doneYesNo();
-var what = checkWhat();
-    
-if (done == false){
-    $('#error-summary').show();
-    $('#error-summary').focus();
-    return false;
-}
-else{
-    $('#error-summary').hide();        
-    return true;
-}
-}
-    
-function doneYesNo(){
-
-// Nothing selected
-if(!document.getElementById('done-yes').checked && !document.getElementById('done-no').checked){            
-    $('#done-error-link').show();
-    $('#done-error').show();
-    $('#done-yes-no').addClass('error');
-    return false;
-}
-else{
-    $('#done-error-link').hide();
-    $('#done-error').hide();
-    $('#done-yes-no').removeClass('error');            
-    return true;
-}
-}
-
-function checkWhat(){
-
-// Nothing selected
-if(document.getElementById('what').value == ""){
-    $('#what-error-link').show();
-    $('#what-error').show();
-    $('#whatwhat').addClass('error');
-    return false;
-}
-else{
-    $('#done-error-link').hide();
-    $('#done-error').hide();
-    $('#done-yes-no').removeClass('error');        
-    return true;
-}
-}
-
-</script>
 
 {% endblock %}

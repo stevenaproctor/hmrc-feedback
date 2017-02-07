@@ -10,18 +10,6 @@
     
     {% include "includes/phase_banner_alpha.html" %}
 
-        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
-
-            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                There is a problem
-            </h1>
-
-            <ul class="error-summary-list text">                
-                <li id="before-error-link"><a href="#tel">Select what you tried before you used this service</a></li>
-            </ul>
-
-        </div>
-
         <div class="grid-row">
 
             <div class="column-two-thirds">
@@ -33,12 +21,6 @@
                     What did you try before using this service?
                 </h1>
 
-<!--
-                <p>
-                    Do not include any personal or financial information like your National Insurance number or bank details.
-                </p>
--->
-
                 <form role="form" class="form" action="feedback3">                    
 
                     <fieldset>                    
@@ -48,44 +30,42 @@
                             What did you do before using this service?                            
                         </legend>
 
-                            <p role="complementary">
-                                Select all that apply.
-                            </p>
-
-                        <span id="before-error" class="error-message" style="display:none">Select what you did before you used this service</span>
+                        <p role="complementary">
+                            Select all that apply.
+                        </p>
 
                         <label class="block-label" for="tel" id="tel-label">
-                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()" aria-required="true">Telephoned HMRC
+                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()">Telephoned HMRC
                         </label>
 
                         <label class="block-label" for="let" id="let-label">
-                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()" aria-required="true">Wrote to HMRC
+                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()">Wrote to HMRC
                         </label>
 
                         <label class="block-label" for="online" id="online-label">
-                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()" aria-required="true">Completed an online form
+                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()">Completed an online form
                         </label>
 
                         <label class="block-label" for="govuk" id="govuk-label">
-                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()" aria-required="true">Read guidance on GOV.UK
+                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()">Read guidance on GOV.UK
                         </label>
 
                         <label class="block-label" for="pro" id="pro-label">
-                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()" aria-required="true">Spoke to your employer, agent or accountant
+                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()">Spoke to your employer, agent or accountant
                         </label>
 
                         <label class="block-label" for="fandf" id="fandf-label">
-                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()" aria-required="true">Spoke to a friend or family member
+                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()">Spoke to a friend or family member
                         </label>
 
                         <label class="block-label" for="none" id="none-label">
-                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()" aria-required="true">None of these
+                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()">None of these
                         </label>
                         </div>
                     </fieldset>                   
 
                 <div class="form-group">
-                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                    <input class="button" type="submit" value="Continue" id="submit">
                 </div>
 
           </form>
@@ -94,42 +74,7 @@
       </div>
 </main>
 
-
-
 <script>
-
-function checkSelected(){
-
-var before = beforeToday();
-    console.log(before);
-    
-if (before == false){
-    $('#error-summary').show();
-    $('#error-summary').focus();
-    return false;
-}
-else{
-    $('#error-summary').hide();        
-    return true;
-}
-}
-    
-function beforeToday(){
-    
-if(!document.getElementById('tel').checked && !document.getElementById('let').checked && !document.getElementById('online').checked && !document.getElementById('govuk').checked && !document.getElementById('pro').checked && !document.getElementById('fandf').checked && !document.getElementById('none').checked){    
-    $('#before-error-link').show();
-    $('#before-error').show();
-    $('#before').addClass('error');
-    return false;
-}
-else{
-    $('#before-error-link').hide();
-    $('#before-error').hide();
-    $('#before').removeClass('error');
-    return true;
-}
-
-}
 
 function checkNone(){
     

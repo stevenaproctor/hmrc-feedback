@@ -10,18 +10,6 @@
     
     {% include "includes/phase_banner_alpha.html" %}
 
-        <div id="error-summary" class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="display:none">
-
-            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                There is a problem
-            </h1>
-
-            <ul class="error-summary-list text">                
-                <li id="sat-error-link"><a href="#vsat">Select how you felt about the service you received today</a></li>                
-            </ul>
-
-        </div>
-
         <div class="grid-row">
 
             <div class="column-two-thirds">
@@ -33,12 +21,6 @@
                     Overall, how did you feel about the service you received today?
                 </h1>
 
-<!--
-                <p>
-                    Do not include any personal or financial information like your National Insurance number or bank details.
-                </p>
--->
-
                 <form role="form" class="form" action="feedback4a">            
 
                     <fieldset>                    
@@ -46,35 +28,32 @@
                         <div class="form-group" id="satisfaction">
                         <legend class="visuallyhidden">
                             Overall, how did you feel about the service you received today?
-                        </legend>                        
-
-
-                        <span id="sat-error" class="error-message" style="display:none">Select how you felt about the service you received today </span>
-
+                        </legend>
+                        
                         <label class="block-label" for="vsat">
-                            <input id="vsat" type="radio" name="sat" value="Very satisfied" aria-required="true">Very satisfied
+                            <input id="vsat" type="radio" name="sat" value="Very satisfied">Very satisfied
                         </label>
 
                         <label class="block-label" for="sat">
-                            <input id="sat" type="radio" name="sat" value="Satisifed" aria-required="true">Satisifed
+                            <input id="sat" type="radio" name="sat" value="Satisfied">Satisfied
                         </label>
 
                         <label class="block-label" for="neither">
-                            <input id="neither" type="radio" name="sat" value="Neither satisified or dissatisfied" aria-required="true">Neither satisifed or dissatisfied
+                            <input id="neither" type="radio" name="sat" value="Neither satisfied or dissatisfied">Neither satisfied or dissatisfied
                         </label>
 
                         <label class="block-label" for="dis">
-                            <input id="dis" type="radio" name="sat" value="Dissatisfied" aria-required="true">Dissatisfied
+                            <input id="dis" type="radio" name="sat" value="Dissatisfied">Dissatisfied
                         </label>
 
                         <label class="block-label" for="vdis">
-                            <input id="vdis" type="radio" name="sat" value="Very dissatisfied" aria-required="true">Very dissatisfied
+                            <input id="vdis" type="radio" name="sat" value="Very dissatisfied">Very dissatisfied
                         </label>                    
                         </div>
                     </fieldset>
 
                 <div class="form-group">
-                    <input class="button" type="submit" value="Continue" id="submit" onClick="return checkSelected()">
+                    <input class="button" type="submit" value="Continue" id="submit">
                 </div>
 
           </form>
@@ -82,42 +61,5 @@
         </div>
       </div>
 </main>
-
-<script>
-
-function checkSelected(){
-
-var sat = checkSatisfaction();
-    console.log(sat);
-    
-if (sat == false){
-    $('#error-summary').show();
-    $('#error-summary').focus();
-    return false;
-}
-else{
-    $('#error-summary').hide();        
-    return true;
-}
-}
-    
-function checkSatisfaction(){
-    
-if(!document.getElementById('vsat').checked && !document.getElementById('sat').checked && !document.getElementById('neither').checked && !document.getElementById('dis').checked && !document.getElementById('vdis').checked){    
-    $('#sat-error-link').show();
-    $('#sat-error').show();
-    $('#satisfaction').addClass('error');
-    return false;
-}
-else{
-    $('#sat-error-link').hide();
-    $('#sat-error').hide();
-    $('#satisfaction').removeClass('error');
-    return true;
-}
-    
-}
-
-</script>
 
 {% endblock %}
