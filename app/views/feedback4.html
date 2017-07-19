@@ -15,78 +15,65 @@
 
             {% include "includes/backlink.html" %}
 
-            <h1 class="heading-large">How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?</h1>
+            <h1 class="heading-xlarge">How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?</h1>
 
             <form role="form" class="form" action="thanks">
                 <fieldset>
                     <legend class="visuallyhidden">How likely are you to recommend this service to a friend or colleague if they needed to do the same thing?</legend>
                     <div class="form-group" id="recommended">
                         <div class="multiple-choice">
-                            <input id="10" type="radio" name="rec" value="10">10 Very likely
-                            <label for="10"></label>
+                            <input id="10" type="radio" name="rec" value="10">
+                            <label for="10">10 Very likely</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="09" type="radio" name="rec" value="09">9
-                            <label for="09"></label>
+                            <input id="09" type="radio" name="rec" value="09">
+                            <label for="09">9</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="08" type="radio" name="rec" value="08">8
-                            <label for="08"></label>
+                            <input id="08" type="radio" name="rec" value="08">
+                            <label for="08">8</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="07" type="radio" name="rec" value="07">7
-                            <label for="07"></label>
+                            <input id="07" type="radio" name="rec" value="07">
+                            <label for="07">7</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="06" type="radio" name="rec" value="06">6
-                            <label for="06"></label>
+                            <input id="06" type="radio" name="rec" value="06">
+                            <label for="06">6</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="05" type="radio" name="rec" value="05">5
-                            <label for="05"></label>
+                            <input id="05" type="radio" name="rec" value="05">
+                            <label for="05">5</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="04" type="radio" name="rec" value="04">4
-                            <label for="04"></label>
+                            <input id="04" type="radio" name="rec" value="04">
+                            <label for="04">4</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="03" type="radio" name="rec" value="03">3
-                            <label for="03"></label>
+                            <input id="03" type="radio" name="rec" value="03">
+                            <label for="03">3</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="02" type="radio" name="rec" value="02">2
-                            <label for="02"></label>
+                            <input id="02" type="radio" name="rec" value="02">
+                            <label for="02">2</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="01" type="radio" name="rec" value="01">1
-                            <label for="01"></label>
+                            <input id="01" type="radio" name="rec" value="01">
+                            <label for="01">1</label>
                         </div>
-
                         <div class="multiple-choice">
-                            <input id="00" type="radio" name="rec" value="00">0 Very unlikely
-                            <label for="00"></label>
+                            <input id="00" type="radio" name="rec" value="00">
+                            <label for="00">0 Very unlikely</label>
                         </div>
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend class="heading-large">Why did you give this rating?</legend>
-                    <div class="form-group" id="rat">
-                        <label class="visuallyhidden" for="rating">Tell us why you gave this rating?</label>
+                <div class="form-group" id="rat">
+                    <label class="heading-medium" for="rating">Why did you gave this rating?
                         <span class="form-hint">Do not include any personal or financial information like your National Insurance number or bank details.</span>
-                        <textarea class="form-control" id="rating" style="width:100%" rows="5"></textarea>
-                    </div>
-                </fieldset>
-
+                    </label>
+                    <textarea class="form-control" id="rating" style="width:100%" rows="5"></textarea>
+                </div>
                 <input class="button" type="submit" value="Continue" id="submit">
             </form>
 
