@@ -10,127 +10,104 @@
 
     {% include "includes/phase_banner_alpha.html" %}
 
-        <div class="grid-row">
+    <div class="grid-row">
+        <div class="column-two-thirds">
 
-            <div class="column-two-thirds">
+            {% include "includes/backlink.html" %}
+            <h1 class="heading-large">Give feedback</h1>
 
-            <a class="link-back" href="javascript:history.go(-1)">Back</a>
+            <p>All questions in the survey are optional.</p>
 
-                <h1 class="heading-large">
-                    Give feedback
-                </h1>
-
-                <p>
-                    All questions in the survey are optional.
-                </p>
-
-                <form role="form" class="form" action="feedback2">
+            <form role="form" class="form" action="feedback2">
 
                 <fieldset class="inline">
+                    <legend class="heading-medium">Were you able to do what you needed to do today?</legend>
                     <div class="form-group" id="done-yes-no">
-
-                        <legend class="heading-medium">
-                            Were you able to do what you needed to do today?
-                        </legend>
-
                         <div class="multiple-choice">
                             <input id="done-yes" type="radio" name="done" value="Yes">Yes
                             <label  for="done-yes"></label>
                         </div>
-
                         <div class="multiple-choice">
                             <input id="done-no" type="radio" name="done" value="No">No
-                            <label  for="done-no"></label>
+                            <label for="done-no"></label>
                         </div>
-
                     </div>
-
                 </fieldset>
 
                 <fieldset>
+                    <legend class="heading-medium">What did you need to do?</legend>
+                    <p role="complementary">Select all that apply.</p>
 
                     <div class="form-group" id="before">
-                        <legend class="heading-medium">
-                            What did you need to do?
-                        </legend>
-
-                        <p role="complementary">
-                            Select all that apply.
-                        </p>
-
                         <div class="multiple-choice">
                             <input id="who" type="checkbox" name="who" value="View who is on your claim">
                             <label for="who" id="who-label">View who is on your claim</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="payments" type="checkbox" name="payments" value="View your next payments">
                             <label for="payments" id="payments-label">View your next payments</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="renewals" type="checkbox" name="renewals" value="Renew your tax credits">
                             <label for="renewals" id="renewals-label">Renew your tax credits</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="personal" type="checkbox" name="personal" value="Change personal details">
                             <label for="personal" id="personal-label">Change personal details</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="jobs" type="checkbox" name="jobs" value="Change jobs">
                             <label for="jobs" id="jobs-label">Change number of jobs</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="hours" type="checkbox" name="hours" value="Change hours">
                             <label for="hours" id="hours-label">Change hours worked a week</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="earnings" type="checkbox" name="earnings" value="Change earnings">
                             <label for="earnings" id="earnings-label">Change annual estimated earnings</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="profits" type="checkbox" name="earnings" value="Change earnings">
                             <label for="profits" id="profits-label">Change estimated annual self-employed profits</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="children" type="checkbox" name="children" value="Change children">
                             <label for="children" id="children-label">Change children</label>
                         </div>
 
-                        <div class="multiple-choice">                            
+                        <div class="multiple-choice">
                             <input id="childcare" type="checkbox" name="childcare" value="Change childcare">
                             <label for="childcare" id="childcare-label">Change childcare</label>
                         </div>
 
-                        <div class="multiple-choice" data-target="what-other">                            
+                        <div class="multiple-choice" data-target="what-other">
                             <input id="other" type="checkbox" name="other" value="Other">
                             <label for="other" id="other-label">Something else</label>
-                        </div>                        
+                        </div>
 
                         <div class="panel panel-border-narrow js-hidden" id="what-other">
                             <label class="form-label" for="otherother">Tell us what else you came to the service to do</label>
                             <textarea class="form-control form-control-3-4" name="otherother" id="otherother" rows="5"></textarea>
                         </div>
-                        </div>
 
                     </div>
-
                 </fieldset>
 
-                <div class="form-group">
-                    <input class="button" type="submit" value="Continue" id="submit">
-                </div>
+                <input class="button" type="submit" value="Continue" id="submit">
 
-          </form>
+            </form>
 
-          </div>
       </div>
-</main>
+  </div>
 
+</main>
 {% endblock %}

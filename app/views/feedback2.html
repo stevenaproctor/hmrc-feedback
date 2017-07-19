@@ -11,75 +11,63 @@
     {% include "includes/phase_banner_alpha.html" %}
 
         <div class="grid-row">
-
             <div class="column-two-thirds">
 
-            <a class="link-back" href="javascript:history.go(-1)">Back</a>
+                {% include "includes/backlink.html" %}
 
-                <h1 class="heading-large">
-                    <!-- <span class="heading-secondary">Give feedback</span> -->
-                    What did you try before using this service?
-                </h1>
+                <h1 class="heading-large">What did you try before using this service?</h1>
+
+                <p role="complementary">Select all that apply.</p>
 
                 <form role="form" class="form" action="feedback3">
-
                     <fieldset>
+                        <legend class="visuallyhidden">What did you do before using this service?</legend>
 
                         <div class="form-group" id="before">
-                        <legend class="visuallyhidden">
-                            What did you do before using this service?
-                        </legend>
 
-                        <p role="complementary">
-                            Select all that apply.
-                        </p>
+                            <div class="multiple-choice">
+                                <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()">Telephoned HMRC
+                                <label for="tel" id="tel-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()">Telephoned HMRC
-                        <label for="tel" id="tel-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()">Wrote to HMRC
+                                <label for="let" id="let-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()">Wrote to HMRC
-                        <label for="let" id="let-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()">Completed an online form
+                                <label for="online" id="online-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()">Completed an online form
-                        <label for="online" id="online-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()">Read guidance on GOV.UK
+                                <label for="govuk" id="govuk-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()">Read guidance on GOV.UK
-                        <label for="govuk" id="govuk-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()">Spoke to your employer, agent or accountant
+                                <label for="pro" id="pro-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()">Spoke to your employer, agent or accountant
-                        <label for="pro" id="pro-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()">Spoke to a friend or family member
+                                <label for="fandf" id="fandf-label"></label>
+                            </div>
 
-                        <div class="multiple-choice">
-                        <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()">Spoke to a friend or family member
-                        <label for="fandf" id="fandf-label"></label>
-                        </div>
-
-                        <div class="multiple-choice">
-                        <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()">None of these
-                        <label for="none" id="none-label"></label>
-                        </div>
+                            <div class="multiple-choice">
+                                <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()">None of these
+                                <label for="none" id="none-label"></label>
+                            </div>
                         </div>
                     </fieldset>
->>>>>>> 37aa492d5e393eecf8ad75a41e7a6e2bc09c8404
 
-                <div class="form-group">
                     <input class="button" type="submit" value="Continue" id="submit">
-                </div>
+                </form>
 
-          </form>
-
+            </div>
         </div>
-      </div>
+
 </main>
 
 <script>
