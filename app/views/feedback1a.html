@@ -7,16 +7,16 @@
 {% block content %}
 
 <main id="content" role="main">
-    
+
     {% include "includes/phase_banner_alpha.html" %}
 
         <div class="grid-row">
 
             <div class="column-two-thirds">
 
-            <a class="link-back" href="javascript:history.go(-1)">Back</a>                                
+            <a class="link-back" href="javascript:history.go(-1)">Back</a>
 
-                <h1 class="heading-large">                    
+                <h1 class="heading-large">
                     Give feedback
                 </h1>
 
@@ -24,26 +24,28 @@
                     All questions in the survey are optional.
                 </p>
 
-                <form role="form" class="form" action="feedback2">                                  
+                <form role="form" class="form" action="feedback2">
 
                 <fieldset class="inline">
                     <div class="form-group" id="done-yes-no">
 
                         <legend class="heading-medium">
                             Were you able to do what you needed to do today?
-                        </legend>                
+                        </legend>
 
-                        <label class="block-label" for="done-yes">
+                        <div class="multiple-choice">
                             <input id="done-yes" type="radio" name="done" value="Yes">Yes
-                        </label>
+                            <label for="done-yes"></label>
+                        </div>
 
-                        <label class="block-label" for="done-no">
+                        <div class="multiple-choice">
                             <input id="done-no" type="radio" name="done" value="No">No
-                        </label>                        
-                        
+                            <label for="done-no"></label>
+                        </div>
+
                     </div>
 
-                </fieldset>                  
+                </fieldset>
 
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue" id="submit">
