@@ -33,13 +33,15 @@
                             Were you able to do what you needed to do today?
                         </legend>
 
-                        <label class="block-label" for="done-yes">
-                            <input id="done-yes" type="radio" name="done" value="Yes">Yes
-                        </label>
+                        <div class="multiple-choice">
+                            <input id="done-yes" type="radio" name="done" value="Yes">
+                            <label for="done-yes">Yes</label>
+                        </div>
 
-                        <label class="block-label" for="done-no">
-                            <input id="done-no" type="radio" name="done" value="No">No
-                        </label>
+                        <div class="multiple-choice">
+                            <input id="done-no" type="radio" name="done" value="No">
+                            <label for="done-no">No</label>
+                        </div>
 
                     </div>
 
@@ -56,48 +58,65 @@
                             Select all that apply.
                         </p>
 
-                        <label class="block-label" for="who" id="who-label">
-                            <input id="who" type="checkbox" name="who" value="View who is on your claim">View who is on your claim
-                        </label>
+                        <div class="multiple-choice">
+                            <input id="who" type="checkbox" name="who" value="View who is on your claim">
+                            <label for="who" id="who-label">View who is on your claim</label>
+                        </div>
 
-                        <label class="block-label" for="payments" id="payments-label">
-                            <input id="payments" type="checkbox" name="payments" value="View your next payments">View your next payments
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="payments" type="checkbox" name="payments" value="View your next payments">
+                            <label for="payments" id="payments-label">View your next payments</label>
+                        </div>
 
-                        <label class="block-label" for="personal" id="personal-label">
-                            <input id="personal" type="checkbox" name="personal" value="Change personal details">Change personal details
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="renewals" type="checkbox" name="renewals" value="Renew your tax credits">
+                            <label for="renewals" id="renewals-label">Renew your tax credits</label>
+                        </div>
 
-                        <label class="block-label" for="jobs" id="jobs-label">
-                            <input id="jobs" type="checkbox" name="jobs" value="Change jobs">Change number of jobs
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="personal" type="checkbox" name="personal" value="Change personal details">
+                            <label for="personal" id="personal-label">Change personal details</label>
+                        </div>
 
-                        <label class="block-label" for="hours" id="hours-label">
-                            <input id="hours" type="checkbox" name="hours" value="Change hours">Change hours worked a week
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="jobs" type="checkbox" name="jobs" value="Change jobs">
+                            <label for="jobs" id="jobs-label">Change number of jobs</label>
+                        </div>
 
-                        <label class="block-label" for="earnings" id="earnings-label">
-                            <input id="earnings" type="checkbox" name="earnings" value="Change earnings">Change annual estimated earnings
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="hours" type="checkbox" name="hours" value="Change hours">
+                            <label for="hours" id="hours-label">Change hours worked a week</label>
+                        </div>
 
-                        <label class="block-label" for="profits" id="profits-label">
-                            <input id="profits" type="checkbox" name="earnings" value="Change earnings">Change estimated annual self-employed profits
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="earnings" type="checkbox" name="earnings" value="Change earnings">
+                            <label for="earnings" id="earnings-label">Change annual estimated earnings</label>
+                        </div>
 
-                        <label class="block-label" for="children" id="children-label">
-                            <input id="children" type="checkbox" name="children" value="Change children">Change children
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="profits" type="checkbox" name="earnings" value="Change earnings">
+                            <label for="profits" id="profits-label">Change estimated annual self-employed profits</label>
+                        </div>
 
-                        <label class="block-label" for="childcare" id="childcare-label">
-                            <input id="childcare" type="checkbox" name="childcare" value="Change childcare">Change childcare
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="children" type="checkbox" name="children" value="Change children">
+                            <label for="children" id="children-label">Change children</label>
+                        </div>
 
-                        <label class="block-label" for="other" id="other-label" data-target="what-other">
-                            <input id="other" type="checkbox" name="other" value="Other">Other
-                        </label>
+                        <div class="multiple-choice">                            
+                            <input id="childcare" type="checkbox" name="childcare" value="Change childcare">
+                            <label for="childcare" id="childcare-label">Change childcare</label>
+                        </div>
+
+                        <div class="multiple-choice" data-target="what-other">                            
+                            <input id="other" type="checkbox" name="other" value="Other">
+                            <label for="other" id="other-label">Something else</label>
+                        </div>
+                        
                         <div class="panel panel-border-narrow js-hidden" id="what-other">
                             <label class="form-label" for="otherother">Tell us what else you came to the service to do</label>
-                            <input class="form-control" name="otherother" type="text" id="contact-email">
+                            <textarea class="form-control form-control-3-4" name="otherother" id="otherother" rows="5"></textarea>
+                        </div>
                         </div>
 
                     </div>

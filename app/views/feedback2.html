@@ -34,34 +34,41 @@
                             Select all that apply.
                         </p>
 
-                        <label class="block-label" for="tel" id="tel-label">
-                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()">Telephoned HMRC
-                        </label>
-
-                        <label class="block-label" for="let" id="let-label">
-                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()">Wrote to HMRC
-                        </label>
-
-                        <label class="block-label" for="online" id="online-label">
-                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()">Completed an online form
-                        </label>
-
-                        <label class="block-label" for="govuk" id="govuk-label">
-                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()">Read guidance on GOV.UK
-                        </label>
-
-                        <label class="block-label" for="pro" id="pro-label">
-                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()">Spoke to your employer, agent or accountant
-                        </label>
-
-                        <label class="block-label" for="fandf" id="fandf-label">
-                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()">Spoke to a friend or family member
-                        </label>
-
-                        <label class="block-label" for="none" id="none-label">
-                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()">None of these
-                        </label>
+                        <div class="multiple-choice">                        
+                            <input id="tel" type="checkbox" name="before" value="Telephone HMRC" onclick="checkNone()">
+                            <label class="block-label" for="tel" id="tel-label">Telephoned HMRC</label>
                         </div>
+
+                        <div class="multiple-choice">                        
+                            <input id="let" type="checkbox" name="before" value="Wrote to HMRC" onclick="checkNone()">
+                            <label class="block-label" for="let" id="let-label">Wrote to HMRC</label>
+                        </div>
+
+                        <div class="multiple-choice">                        
+                            <input id="online" type="checkbox" name="before" value="Completed an online form" onclick="checkNone()">
+                            <label class="block-label" for="online" id="online-label">Completed an online form</label>
+                        </div>
+
+                        <div class="multiple-choice">
+                            <input id="govuk" type="checkbox" name="before" value="Read guidance on GOV>UK" onclick="checkNone()">
+                            <label class="block-label" for="govuk" id="govuk-label">Read guidance on GOV.UK</label>
+                        </div>
+
+                        <div class="multiple-choice">                            
+                            <input id="pro" type="checkbox" name="before" value="Spoke to your employer, agent or accountant" onclick="checkNone()">
+                            <label class="block-label" for="pro" id="pro-label">Spoke to your employer, agent or accountant</label>
+                        </div>
+
+                        <div class="multiple-choice">                        
+                            <input id="fandf" type="checkbox" name="before" value="Spoke to a friend or family member" onclick="checkNone()">
+                            <label class="block-label" for="fandf" id="fandf-label">Spoke to a friend or family member</label>
+                        </div>
+
+                        <div class="multiple-choice">                        
+                            <input id="none" type="checkbox" name="before" value="None of the above" onclick="checkChecks()">
+                            <label class="block-label" for="none" id="none-label">None of these</label>
+                        </div>
+                        </div>                        
                     </fieldset>                   
 
                 <div class="form-group">
